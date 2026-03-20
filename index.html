@@ -1,25 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievement</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Arial に固定 */
+      background-color: #f0f0f0;
+    }
+    a.nav-link {
+      color: #80BDFF !important; /* ナビバーリンク色 */
+    }
+    a.nav-link:hover {
+      text-decoration: underline;
+    }
+    .container-content {
+      background-color: #fff;
+      padding: 30px;
+      margin-top: 100px; /* ナビバーの固定分スペース確保 */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+  </style>
+</head>
 <body>
-<header>
-    <nav class="navbar bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Home</a>
-        </div>
-    </nav>
-</header>
-<main>
-    <div class="container mt-5 py-5">
-        <div class="p-4 rounded bg-body-secondary" style="font-family: Arial, sans-serif;">
-            <p class="lead mt-5">現在はアクティブに変動している地すべりの空間分布の把握やその特徴の解明に取り組んでいます。</p>
-            <p class="lead">そのために合成開口レーダ(SAR)や光学衛星画像、LiDAR DEMデータなどの各種リモートセンシング技術を用いて、地すべりの観測やそれらに共通する特徴の定量化に取り組んでいます。</p>
-            <p class="lead"><a href="about.html">Introduction</a></p> 
-            <p class="lead"><a href="research.html">Research</a></p> 
-            <p class="lead"><a href="achievement.html">Achievement</a></p> 
-        </div>
+
+  <!-- ナビバー -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Sample Site</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link active" href="achievement.html">Achievement</a></li>
+          <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+        </ul>
+      </div>
     </div>
-</main>
-<footer class="py-3 fixed-bottom bg-body-tertiary">
-  <div class="text-center">
-    <span class="text-body-secondary">© timetime0628</span>
+  </nav>
+
+  <!-- コンテンツ -->
+  <div class="container container-content">
+    <h1 class="mb-4">Achievements</h1>
+    <p class="lead">年表</p>
+    <ul class="mb-4">
+    <p class="lead mt-5">現在はアクティブに変動している地すべりの空間分布の把握やその特徴の解明に取り組んでいます。</p>
+    <p class="lead">そのために合成開口レーダ(SAR)や光学衛星画像、LiDAR DEMデータなどの各種リモートセンシング技術を用いて、地すべりの観測やそれらに共通する特徴の定量化に取り組んでいます。</p>
+    </ul>
+    <p class="lead">最新の出来事はここから確認できます。</p>
   </div>
-</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></script>
 </body>
+</html>
