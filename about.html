@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sample Site</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievement</title>
+  <link rel="stylesheet" href="style.css"> <!-- 共通CSSがあれば -->
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background-color: #333; padding: 10px; }
+    nav a { color: white; margin-right: 15px; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .container { padding: 20px; max-width: 800px; margin: auto; }
+    h1 { color: #333; }
+    ul { list-style-type: square; padding-left: 20px; }
+  </style>
 </head>
 <body>
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Sample Site</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">Introduction</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="achievement.html">Achievement</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
+  <!-- ナビゲーションバー -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="achievement.html">Achievement</a>
   </nav>
-</header>
-<main>
-    <div class="container mt-5 py-5">
-        <div class="row">
-            <h2>Introduction</h2>
-            <p>2001/6/28 産まれる。</p>
-            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-        </div>
-    </div>
-</main>
-<footer class="py-3 fixed-bottom bg-body-tertiary">
-  <div class="text-center">
-    <span class="text-body-secondary">© Sample Site</span>
+
+  <!-- コンテンツ -->
+  <div class="container">
+    <h1>Achievements</h1>
+    <p>年表</p>
+    <ul>
+      <li>2001年6月28日: 産まれる。</li>
+      <li>2017年3月:中学校卒業</li>
+      <li>2020年3月:高校卒業</li>
+    　<li>2024年3月:大学卒業</li>
+    　<li>2026年3月:大学院博士前期課程修了</li>
+    </ul>
   </div>
-</footer>
+
 </body>
 </html>
