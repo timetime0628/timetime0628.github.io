@@ -1,23 +1,30 @@
 body {
-  font-family: Arial, sans-serif; /* Arial に固定 */
+  font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  }
-.container {
-  margin-top: 100px; /* ナビバー固定分のスペース確保 */
+  padding-top: 120px; /* ナビバー固定分の余白（ここで一元管理） */
 }
+
+/* ナビバーリンク */
 a.nav-link {
-  color: white !important; /* ナビバーリンク色 */
+  color: white !important;
 }
+
 a.nav-link:hover {
   text-decoration: underline;
 }
+
+/* コンテンツの白いカード */
 .container-content {
   background-color: #fff;
-  padding: 30px;
-  margin-top: 100px; /* ナビバーの固定分スペース確保 */
+  padding: 40px;              /* 少し広めにして見やすく */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  max-width: 900px;          /* 横幅制限 */
+  margin: 0 auto;            /* 中央寄せ */
 }
+
+/* リスト */
 ul {
   list-style-type: square;
   padding-left: 20px;
