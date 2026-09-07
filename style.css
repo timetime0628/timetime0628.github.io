@@ -300,3 +300,5 @@ a.tag:hover { border-color: var(--accent); color: var(--accent); }
 /* 図 */
 figure { margin: 1.75rem 0; }
 figcaption { color: var(--ink-3); font-size: 0.8125rem; line-height: 1.7; margin-top: 0.5rem; }
+
+html { scrollbar-gutter: stable; }
