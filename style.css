@@ -1,31 +1,285 @@
+/* =========================================================
+   Osuke Taima — site styles
+   Bootstrap は不要です。<link> を外してこのファイルだけ読んでください。
+   ========================================================= */
+
+/* ---------- 1. トークン ---------- */
+:root {
+  /* 欧文が先、和文が後。1行に英日が混ざっても字ごとに正しい書体が当たります */
+  --font-display: 'Playfair Display', 'Shippori Mincho', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Zen Kaku Gothic New', system-ui, sans-serif;
+
+  --bg: #ffffff;
+  --bg-soft: #f6f7f5;
+  --ink: #23282a;   /* 本文 */
+  --ink-2: #5c6560; /* 補足・所属など */
+  --ink-3: #8a938d; /* 日付・メタ */
+  --rule: #e3e6e2;
+  --rule-strong: #c8cec9;
+
+  /* アクセント1色。ここを差し替えれば全体の印象が変わります */
+  --accent: #1f4d38;       /* 深緑 */
+  --accent-soft: #eef3ef;
+
+  --measure: 46rem;  /* 本文カラムの幅 */
+  --gutter: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141816;
+    --bg-soft: #1c2220;
+    --ink: #e6eae7;
+    --ink-2: #a8b1ac;
+    --ink-3: #7d867f;
+    --rule: #2c3431;
+    --rule-strong: #3d4643;
+    --accent: #7fb79a;
+    --accent-soft: #1e2b25;
+  }
+}
+
+/* ---------- 2. ベース ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding-top: 80px; /* ナビバー固定分の余白（ここで一元管理） */
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;   /* 和文は欧文より行間を広めに */
+  font-feature-settings: 'palt' 1;  /* 和文の詰め */
+  text-rendering: optimizeLegibility;
 }
 
-/* ナビバーリンク */
-a.nav-link {
-  color: white !important;
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-a.nav-link:hover {
-  text-decoration: underline;
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--accent); color: #fff;
+  padding: 0.6rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+/* ---------- 3. 見出し ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* コンテンツの白いカード */
-.container-content {
-  background-color: #fff;
-  padding: 40px;              /* 少し広めにして見やすく */
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  /* max-width: 1100px; */
-  width: 97%;
-  margin: 0 auto;
+h2 {
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.1rem;
 }
 
-/* リスト */
-ul {
-  list-style-type: square;
-  padding-left: 20px;
+h3 { font-size: 1.0625rem; font-family: var(--font-body); font-weight: 600; }
+
+p { margin: 0 0 1.1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ---------- 4. レイアウト ---------- */
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+main { padding-block: 3.5rem 5rem; }
+
+section + section { margin-top: 3.25rem; }
+
+/* ---------- 5. ナビ ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding-block: 0.9rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.site-nav { display: flex; gap: 1.4rem; }
+
+.site-nav a {
+  color: var(--ink-2);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current='page'] {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- 6. ヒーロー ---------- */
+.hero { display: grid; gap: 1.75rem; }
+
+@media (min-width: 40rem) {
+  .hero {
+    grid-template-columns: 8.5rem 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.hero-photo { border-radius: 2px; }
+
+.hero h1 {
+  font-size: clamp(2rem, 5.5vw, 2.75rem);
+  letter-spacing: -0.005em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-name-ja {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.hero-bio { margin-bottom: 1.5rem; }
+
+/* 所属・連絡先 */
+.facts { margin: 0 0 1.5rem; display: grid; gap: 0.4rem 1.25rem; }
+@media (min-width: 30rem) {
+  .facts { grid-template-columns: 5rem 1fr; }
+}
+.facts dt { color: var(--ink-3); font-size: 0.85rem; line-height: 1.9; }
+.facts dd { margin: 0; font-size: 0.95rem; }
+
+/* 外部リンク列 */
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+.links a {
+  display: inline-block;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- 7. 台帳グリッド（News・業績で共用） ----------
+   左に日付／年、右に本文。このサイトの背骨です。 */
+.ledger { border-top: 1px solid var(--rule); }
+
+.ledger-row {
+  display: grid;
+  gap: 0.15rem 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 34rem) {
+  .ledger-row { grid-template-columns: 6.5rem 1fr; }
+}
+
+.ledger-date {
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.ledger-body { font-size: 0.95rem; line-height: 1.8; }
+.ledger-body > *:last-child { margin-bottom: 0; }
+
+/* 業績1件 */
+.pub-title {
+  font-family: var(--font-body);
+  font-size: 0.9875rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin-bottom: 0.3rem;
+}
+.pub-authors { color: var(--ink-2); font-size: 0.9rem; margin-bottom: 0.15rem; }
+.pub-venue { color: var(--ink-2); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.me { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+/* DOI / arXiv などのバッジ */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0; list-style: none; }
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+a.tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 発表種別など、右端に小さく置くラベル */
+.kind { color: var(--ink-3); font-size: 0.8rem; }
+
+/* ---------- 8. セクション見出し行 ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.section-head h2 { margin-bottom: 0; }
+.section-head a { font-size: 0.875rem; }
+
+/* ---------- 9. 箇条書き ---------- */
+.plain-list { padding-left: 1.15rem; margin: 0 0 1.1rem; }
+.plain-list li { margin-bottom: 0.5rem; }
+.plain-list li:last-child { margin-bottom: 0; }
+
+/* ---------- 10. フッター ---------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+  color: var(--ink-3);
+  font-size: 0.8125rem;
+}
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; justify-content: space-between; }
+
+/* ---------- 11. モーション ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
