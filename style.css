@@ -6,8 +6,8 @@
 /* ---------- 1. トークン ---------- */
 :root {
   /* 欧文が先、和文が後。1行に英日が混ざっても字ごとに正しい書体が当たります */
-  --font-display: 'Playfair Display', 'Shippori Mincho', Georgia, serif;
-  --font-body: 'Source Sans 3', 'Zen Kaku Gothic New', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Noto Sans JP', system-ui, sans-serif;
 
   --bg: #ffffff;
   --bg-soft: #f6f7f5;
