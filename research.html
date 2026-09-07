@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osuke Taima HP</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Research | 當麻央介</title>
+<meta name="description" content="干渉SAR（DInSAR）による活動的地すべりの検出と、LiDAR DEMを用いた地すべり微地形の抽出。自然地理学・地形学・地理情報科学。">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Research | 當麻央介">
+<meta property="og:description" content="干渉SARによる活動的地すべりの検出と、高精細地形データを用いた微地形の抽出。">
+<meta property="og:url" content="https://timetime0628.github.io/research.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Shippori+Mincho:wght@500&family=Source+Sans+3:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<a class="skip-link" href="#main">本文へスキップ</a>
 
-  <!-- ナビバー -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Osuke Taima HP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="about.html">Introduction</a></li>
-          <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-          <li class="nav-item"><a class="nav-link active" href="achievement.html">Achievement</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- コンテンツ -->
-  <div class="container container-content">
-    <h1>Research</h1>
-    <p>専門</p>
-    <p>自然地理学、地理情報科学など</p>
-    <p>研究内容</p>
-    <ul>
-      <li>リモートセンシング技術を用いての現在アクティブに変動している地すべりの観測や、統計的手法、GIS（地理情報システム）にもとづいて地すべりの発生場の特徴を理解することを目的としています。また、高精細の地形データを用いての微地形の抽出などにも取り組んでいます。</li>
-      <li>干渉SAR：山間部に広域的に存在する地すべりの観測を行う。</li>
-      <li>地形解析：LiDAR DEMなどの高精細地形データを用いて、地すべり地形特有の微地形（崖や亀裂など）の抽出を行う。</li>
-    </ul>
-    <p>EXPERTISE and MAIN RESEARCH THEMES</p>
-    <ul>
-      <li>Expertise: Understanding Active Landslides ("slow-moving landslides") and Predicting Landslides Occurrence (Physical Geography, GIS, Geomorphology, Geomorphometry)</li>
-      <li>DInSAR(Differential Synthetic Aperture Radar Interferometry): Detecting active landslides that widely exists mountainous areas in Japan.</li>
-      <li>Terrain analysis: Extracting Characteristic Features of Landslide(e.g. scarp, crack) from LiDAR DEM.</li>
-    </ul>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Osuke Taima</a>
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="achievement.html">Achievement</a>
+    </nav>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section>
+      <h2>研究の概要</h2>
+      <p>
+        リモートセンシング技術を用いて、現在も活動的に変動している地すべりを観測しています。
+        検出した地すべりについて、統計的手法とGISにもとづいてその発生場の特徴を理解することを目指しています。
+        あわせて、高精細の地形データからの微地形の抽出にも取り組んでいます。
+      </p>
+      <ul class="tags">
+        <li><span class="tag">自然地理学</span></li>
+        <li><span class="tag">地理情報科学</span></li>
+      </ul>
+
+      <!-- 図を入れる場合はこのコメントを外してください
+      <figure>
+        <img src="images/interferogram.jpg" alt="南アルプスの干渉画像。地すべり地に同心円状の位相縞が見える。">
+        <figcaption>ALOS-2/PALSAR-2 の DInSAR で検出した南アルプスの斜面変動。</figcaption>
+      </figure>
+      -->
+    </section>
+
+    <section>
+      <h2>研究テーマ</h2>
+
+      <div class="theme">
+        <h3>干渉SAR（DInSAR）による活動的地すべりの検出</h3>
+        <p>
+          山間部に広域的に分布する地すべりを、衛星から取得した合成開口レーダのデータで観測します。
+          広域を面的に、繰り返し変位を捉えられることが利点です。
+        </p>
+      </div>
+
+      <div class="theme">
+        <h3>高精細地形データによる微地形の抽出</h3>
+        <p>
+          LiDAR DEM などの高精細な地形データから、崖や亀裂といった地すべり地形に特有の微地形を抽出します。
+        </p>
+      </div>
+
+    </section>
+
+    <section lang="en">
+      <h2>In English</h2>
+
+      <div class="theme">
+        <h3>Expertise</h3>
+        <p>
+          Understanding active landslides (slow-moving landslides) and predicting landslide occurrence,
+          across physical geography, geomorphology, GIS and geomorphometry.
+        </p>
+      </div>
+
+      <div class="theme">
+        <h3>DInSAR — Differential Synthetic Aperture Radar Interferometry</h3>
+        <p>
+          Detecting active landslides that are widely distributed across mountainous areas in Japan.
+        </p>
+      </div>
+
+      <div class="theme">
+        <h3>Terrain analysis</h3>
+        <p>
+          Extracting characteristic features of landslides, such as scarps and cracks, from LiDAR DEM.
+        </p>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Osuke Taima</span>
+    <span>Last updated: 2026.09</span>
+  </div>
+</footer>
+
 </body>
 </html>
