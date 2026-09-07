@@ -6,7 +6,7 @@
 /* ---------- 1. トークン ---------- */
 :root {
   /* 欧文が先、和文が後。1行に英日が混ざっても字ごとに正しい書体が当たります */
-  --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
+  --font-display: 'Source Sans 3', 'Noto Sans JP',  system-ui, sans-serif;
   --font-body: 'Source Sans 3', 'Noto Sans JP', system-ui, sans-serif;
 
   --bg: #ffffff;
@@ -73,23 +73,17 @@ a:hover { text-decoration-thickness: 2px; }
 .skip-link:focus { left: 1rem; top: 1rem; }
 
 /* ---------- 3. 見出し ---------- */
-h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.4;
-  margin: 0;
-}
+h1, h2, h3 { font-weight: 700; letter-spacing: 0.01em; }
 
-h2 {
-  font-size: 1.4rem;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.1rem;
-}
+h2 { font-size: 1.3rem; }
 
-h3 { font-size: 1.0625rem; font-family: var(--font-body); font-weight: 600; }
+.hero h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); letter-spacing: 0; }
 
-p { margin: 0 0 1.1rem; }
-p:last-child { margin-bottom: 0; }
+.hero-name-ja { font-family: var(--font-body); font-weight: 500; }
+
+.theme h3 { font-family: var(--font-body); font-weight: 700; font-size: 1.0625rem; }
+
+.pub-title { font-weight: 700; }
 
 /* ---------- 4. レイアウト ---------- */
 .wrap {
