@@ -283,3 +283,9 @@ a.tag:hover { border-color: var(--accent); color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* 年表など、左カラムに期間が入る場合 */
+@media (min-width: 34rem) {
+  .ledger--span .ledger-row { grid-template-columns: 10rem 1fr; }
+}
+.ledger--span .ledger-date { letter-spacing: 0; }
