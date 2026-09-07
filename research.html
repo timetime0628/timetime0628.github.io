@@ -115,6 +115,30 @@
     <span>© 2026 Osuke Taima</span>
   </div>
 </footer>
+<script>
+(function () {
+  var btn = document.querySelector('.nav-button');
+  var nav = document.getElementById('site-nav');
 
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.site-header')) {
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 </body>
 </html>
